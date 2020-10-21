@@ -8,21 +8,31 @@ import (
 )
 
 func main() {
-  inputUser()
+  userInput := inputUser()
+  fmt.Println(userInput)
 }
 
-func inputUser(){
+func inputUser()int{
   scanner := bufio.NewScanner(os.Stdin)
-  fmt.Println("Enter value between 1 & 9")
-  scanner.Scan()
+  var input int
+  var err error
 
-  UserInput, err := strconv.Atoi(scanner.Text())
+  for true {
+    fmt.Println("Enter value between 1 & 9")
+    scanner.Scan()
+    input, err = strconv.Atoi(scanner.Text())
 
-  fmt.Printf("UserInput : %d , err : %d", UserInput ,err )
-  if err != nil {
-    fmt.Println("This is not a interger")
-    os.Exit(2)
-  }else {
-    fmt.Println(UserInput)
+    if err != nil {
+      fmt.Println("This is not a interger")
+      continue
+    }
+    if input > 9 || input < 0 {
+      fmt.Println("Your number must be between 0 & 9")
+      continue
+    }
+    if input < 9 || input > 0{
+      break
+    }
   }
+  return input
 }
