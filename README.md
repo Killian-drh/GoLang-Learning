@@ -1,6 +1,6 @@
 # GoTour Learning repository
 
-GoTour Learning is my learning repository. I push everything I do to understand, train and progress in Golang.
+GoLang Learning is my learning repository. I push everything I do to understand, train and progress in Golang.
 
 ## Go Installation
 
